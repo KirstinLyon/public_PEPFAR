@@ -11,6 +11,9 @@ source("Scripts/utilities.R")
 
 
 
+data <- 
+
+
 #has both province and district as well age and sex.  missing fine level age groups - do we need that?  Doesn't include all indicators
 clinical_cascade_coarse_age_sex_data <- read_tsv("Data/unzipped/Clinical_Cascade_Results_by_Coarse_Age_and_Sex.txt") |> filter(ISO3 == COUNTRY)
 
@@ -21,7 +24,8 @@ clinical_cascade_coarse_age <- clinical_cascade_coarse_age_sex_data |>
     prep_data()
 
 #modality here but no age and sex
-enhanced_geographical_data <- read_tsv("Data/unzipped/Enhanced_Geographical_Analysis.txt")|> filter(ISO3 == COUNTRY)
+enhanced_geographical_data <- read_tsv("Data/unzipped/Enhanced_Geographical_Analysis.txt") |> 
+    write_csv("Dataout/Enhanced_Geographical_Analysis.csv")
 
 
 #ends with _target or _result
